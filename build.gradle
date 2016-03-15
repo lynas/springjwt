@@ -1,0 +1,23 @@
+group 'com.lynas'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    provided 'javax:javaee-web-api:7.0'
+    compile (
+            'org.springframework:spring-webmvc:4.2.5.RELEASE',
+            'org.springframework.security:spring-security-web:4.0.4.RELEASE',
+            'org.springframework.security:spring-security-config:4.0.4.RELEASE',
+            'io.jsonwebtoken:jjwt:0.6.0'
+    )
+}
